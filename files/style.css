@@ -1,13 +1,36 @@
 body {
     background-color: lightblue;
-  }
-  
-  h1 {
-    color: white;
-    text-align: center;
-  }
-  
-  p {
-    font-family: verdana;
-    font-size: 20px;
-  }
+    padding: 0px;
+    margin: 0px;
+}
+
+#top-bar{
+  padding: 20px;
+  background-color: rgba(4, 41, 59, 0.838);
+  text-align:right;
+}
+
+#top-bar a{
+  font-size: 40px;
+  margin-right: 25px;
+  color:rgb(255, 255, 255);
+
+}
+
+#restaurant-chooser{
+  text-align: center;
+  margin-top: 20px;
+  border: 2px solid;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#menu{
+  text-align: center;
+  margin-top: 20px;
+  border: 2px solid;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}

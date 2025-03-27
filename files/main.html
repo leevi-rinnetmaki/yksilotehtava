@@ -6,18 +6,33 @@
         <title>Yksilötehtävä</title>
     </head>
     <body>
-        <div id="top-bar">
+        <header id="top-bar">
             <a href="main.html">home</a>
             <a href="login.html">login</a>
-        </div>
+        </header>
         <div id="restaurant-chooser" class="general-element">
-            <p>choose your rostirant</p>
+            <h3>choose your rostirant</h3>
             <label for="restaurant-search">Search for restaurant:</label>
             <input type="search" id="restaurant-search" name="q" />
             <button>Search</button>
         </div>
+        <div id="map" class="general-element">
+            <img src="map.png" alt="map">
+        </div>
         <div id="menu" class="general-element">
-            <p>Today we have beef strogranof. Yummy</p>
+            <nav id="day-selector">
+                <button>WEEK</button>
+                <button>Monday</button>
+                <button>Tuesday</button>
+                <button>Wednesday</button>
+                <button>Thursday</button>
+                <button>Friday</button>
+                <button>Saturday</button>
+                <button>Sunday</button>
+            </nav>
+            <div>
+                <p>Today we have beef strogranof. Yummy</p>
+            </div>
         </div>
     </body>
 </html>

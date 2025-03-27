@@ -1,7 +1,11 @@
-body {
-    background-color: lightblue;
+*{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+  background-color: lightblue;
 }
 
 #top-bar{
@@ -25,22 +29,19 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-/*
-#restaurant-chooser{
-  text-align: center;
-  margin-top: 20px;
-  border: 2px solid;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+
+#day-selector{
+  display:flex;
+  justify-content: space-around;
 }
 
-#menu{
-  text-align: center;
-  margin-top: 20px;
-  border: 2px solid;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-*/
+#day-selector button:nth-child(1){font-size:1em;}
+
+#day-selector button:nth-child(1){background-color:rgb(255, 153, 0);}
+#day-selector button:nth-child(2){background-color:rgb(4, 255, 0);}
+#day-selector button:nth-child(3){background-color:rgb(29, 97, 222);}
+#day-selector button:nth-child(4){background-color:rgb(219, 219, 219);}
+#day-selector button:nth-child(5){background-color:rgb(127, 88, 27);}
+#day-selector button:nth-child(6){background-color:rgb(255, 247, 7);}
+#day-selector button:nth-child(7){background-color:rgb(255, 14, 143);}
+#day-selector button:nth-child(8){background-color:rgb(255, 0, 0);}

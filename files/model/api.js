@@ -32,5 +32,14 @@ async function postData(url, payload) {
     }
 }
 
-export { fetchData, postData };
+function fetchRestaurants() {
+    return fetchData('https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants');
+}
+
+function fetchWeeklyMenu(restaurantId) {
+    return fetchData(`https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants/weekly/${restaurantId}/en`);
+}
+
+
+export { fetchData, postData, fetchRestaurants, fetchWeeklyMenu };
 //fetchData('https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants');

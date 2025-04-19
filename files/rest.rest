@@ -1,0 +1,18 @@
+GET https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants
+
+###
+
+POST https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants
+Content-Type: application/json
+
+{
+    "name": "Test Restaurant",
+    "location": "Test Location"
+}
+###
+
+GET https://media2.edu.metropolia.fi/restaurant/api/v1/users/available/wasd
+
+
+###
+GET https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants/weekly/6470d38ecb12107db6fe24c2/en

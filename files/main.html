@@ -13,15 +13,18 @@
             <a href="main.html">home</a>
             <a href="login.html">login</a>
         </header>
-        <div id="restaurant-chooser" class="general-element">
-            <h3>choose your rostirant</h3>
+        <div id="restaurant-chooser" class="general-element display-restaurants">
+            <h3>choose your restaurant</h3>
             <label for="restaurant-search">Search for restaurant:</label>
             <input type="search" id="restaurant-search-bar" name="q" />
             <button id="restaurant-search-button">Search</button>
+            <div id="suggestions-container" class="suggestions"></div> <!--vibe-->
         </div>
+        <!--
         <div id="map" class="general-element">
             <img src="map.png" alt="map">
         </div>
+        -->
         <div id="main-restaurant" class="general-element">
             <button id="restaurant-button" class="display-menu">
                 Restaurants
@@ -33,6 +36,7 @@
                 <button id="company-compass-group">Compass Group</button>
             </nav>
 
+            <!--
             <nav id="day-selector" class="display-menu">
                 <button>WEEK</button>
                 <button>Monday</button>
@@ -43,12 +47,13 @@
                 <button>Saturday</button>
                 <button>Sunday</button>
             </nav>
+            -->
 
             <ul id="menu-list" class="display-menu"></ul>>
             </ul>
 
             <ul id="restaurant-list" class="display-restaurants">
-                <p>Today we have beef strogranof. Yummy</p>
+                <p>Today we have beef strogranof. Yummy. You shouldn't see this in the website.</p>
             </ul>
 
         </div>

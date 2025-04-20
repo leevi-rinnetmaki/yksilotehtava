@@ -1,27 +1,26 @@
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
-body{
+body {
   background-color: lightblue;
 }
 
-#top-bar{
+#top-bar {
   padding: 20px;
   background-color: rgba(4, 41, 59, 0.838);
-  text-align:right;
+  text-align: right;
 }
 
-#top-bar a{
+#top-bar a {
   font-size: 40px;
   margin-right: 25px;
-  color:rgb(255, 255, 255);
-
+  color: rgb(255, 255, 255);
 }
 
-.general-element{
+.general-element {
   text-align: center;
   margin-top: 20px;
   border: 2px solid;
@@ -30,18 +29,59 @@ body{
   margin-right: auto;
 }
 
-#day-selector{
-  display:flex;
+#day-selector {
+  display: flex;
   justify-content: space-around;
 }
 
-#day-selector button:nth-child(1){font-size:1em;}
+#day-selector button:nth-child(1) {
+  font-size: 1em;
+}
 
-#day-selector button:nth-child(1){background-color:rgb(255, 153, 0);}
-#day-selector button:nth-child(2){background-color:rgb(4, 255, 0);}
-#day-selector button:nth-child(3){background-color:rgb(29, 97, 222);}
-#day-selector button:nth-child(4){background-color:rgb(219, 219, 219);}
-#day-selector button:nth-child(5){background-color:rgb(127, 88, 27);}
-#day-selector button:nth-child(6){background-color:rgb(255, 247, 7);}
-#day-selector button:nth-child(7){background-color:rgb(255, 14, 143);}
-#day-selector button:nth-child(8){background-color:rgb(255, 0, 0);}
+#day-selector button:nth-child(1) {
+  background-color: rgb(255, 153, 0);
+}
+#day-selector button:nth-child(2) {
+  background-color: rgb(4, 255, 0);
+}
+#day-selector button:nth-child(3) {
+  background-color: rgb(29, 97, 222);
+}
+#day-selector button:nth-child(4) {
+  background-color: rgb(219, 219, 219);
+}
+#day-selector button:nth-child(5) {
+  background-color: rgb(127, 88, 27);
+}
+#day-selector button:nth-child(6) {
+  background-color: rgb(255, 247, 7);
+}
+#day-selector button:nth-child(7) {
+  background-color: rgb(255, 14, 143);
+}
+#day-selector button:nth-child(8) {
+  background-color: rgb(255, 0, 0);
+}
+
+.suggestions {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+.suggestion-item:hover {
+  background: #f0f0f0;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

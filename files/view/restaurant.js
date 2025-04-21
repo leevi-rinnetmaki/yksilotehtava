@@ -113,10 +113,10 @@ async function renderMenu(restaurantId, weekday) {
 
 function filterRestaurants(restaurants, company){
     if(company==='all'){
-        renderRestaurants(restaurants);
         companyAll.classList.add('active');
         companySodexo.classList.remove('active');
         companyCompass.classList.remove('active');
+        return restaurants;
     }else{
         const filteredRestaurants = [];
         restaurants.forEach((restaurant) =>{
@@ -124,7 +124,6 @@ function filterRestaurants(restaurants, company){
                 filteredRestaurants.push(restaurant);
             }
         })
-        renderRestaurants(filteredRestaurants);
         if(company === 'Sodexo'){
             companyAll.classList.remove('active');
             companySodexo.classList.add('active');
@@ -134,6 +133,7 @@ function filterRestaurants(restaurants, company){
             companySodexo.classList.remove('active');
             companyCompass.classList.add('active');
         }
+        return filteredRestaurants;
     };
 }
 

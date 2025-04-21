@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
         <script src="./controller/controller.js" type="module" defer></script>
         <script src="./model/api.js" type="module" defer></script>
 
@@ -18,13 +20,10 @@
             <label for="restaurant-search">Search for restaurant:</label>
             <input type="search" id="restaurant-search-bar" name="q" />
             <button id="restaurant-search-button">Search</button>
-            <div id="suggestions-container" class="suggestions"></div> <!--vibe-->
+            <div id="suggestions-container" class="suggestions"></div>
         </div>
-        <!--
         <div id="map" class="general-element">
-            <img src="map.png" alt="map">
         </div>
-        -->
         <div id="main-restaurant" class="general-element">
             <button id="restaurant-button" class="display-menu">
                 Restaurants

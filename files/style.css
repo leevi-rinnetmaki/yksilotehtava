@@ -90,3 +90,7 @@ ol {
   background-color: rgb(255, 153, 0);
   color: white;
 }
+
+#map {
+  height: 500px;
+}

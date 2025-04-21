@@ -85,3 +85,8 @@ ol {
   padding: 0;
   margin: 0;
 }
+
+.active {
+  background-color: rgb(255, 153, 0);
+  color: white;
+}

@@ -5,6 +5,18 @@ const menuList = document.querySelector('#menu-list');
 const restaurantList = document.querySelector('#restaurant-list');
 const displayRestaurants = document.querySelectorAll('.display-restaurants');
 const displayMenu = document.querySelectorAll('.display-menu');
+const companyAll = document.querySelector('#company-all');
+const companySodexo = document.querySelector('#company-sodexo');
+const companyCompass = document.querySelector('#company-compass-group');
+const daySelector = document.querySelectorAll('#day-selector button');
+let restaurantId = null;
+console.log(daySelector[0]);
+
+daySelector.forEach(button => {
+    button.addEventListener('click', () => {
+        renderMenu(restaurantId, button.textContent);
+    });
+});
 
 function showRestaurantOrMenu(boole){
     if(boole){
@@ -47,6 +59,7 @@ async function renderRestaurants(restaurants){
             menuButton.id = restaurant._id;
             menuButton.textContent = 'View Menu';
             menuButton.addEventListener('click', () => {
+                restaurantId = restaurant._id;
                 renderMenu(restaurant._id);
             });
             restaurantItem.appendChild(menuButton);
@@ -59,30 +72,32 @@ async function renderRestaurants(restaurants){
     }
 }
 
-async function renderMenu(restaurantId) {
+async function renderMenu(restaurantId, weekday) {
     showRestaurantOrMenu(false);
     menuList.innerHTML = '';
 
     try {
         const menu = await fetchWeeklyMenu(restaurantId);
         menu.days.forEach(day => {
-            const dayElement = document.createElement('div');
-            dayElement.classList.add('menu-day');
+            if(weekday === undefined ||weekday === "WEEK" || day.date.includes(weekday)){
+                const dayElement = document.createElement('div');
+                dayElement.classList.add('menu-day');
 
-            const dayTitle = document.createElement('h3');
-            dayTitle.textContent = `Date: ${day.date}`;
-            dayElement.appendChild(dayTitle);
+                const dayTitle = document.createElement('h3');
+                dayTitle.textContent = `Date: ${day.date}`;
+                dayElement.appendChild(dayTitle);
 
-            const itemsList = document.createElement('ul');
-            day.courses.forEach(course => {
-                const itemElement = document.createElement('li');
-                const diets = Array.isArray(course.diets) ? course.diets.join(', ') : 'No diets specified';
-                itemElement.textContent = `${course.name} - Diets: ${diets}`;
-                itemsList.appendChild(itemElement);
-            });
+                const itemsList = document.createElement('ul');
+                day.courses.forEach(course => {
+                    const itemElement = document.createElement('li');
+                    const diets = Array.isArray(course.diets) ? course.diets.join(', ') : 'No diets specified';
+                    itemElement.textContent = `${course.name} - Diets: ${diets}`;
+                    itemsList.appendChild(itemElement);
+                });
 
-            dayElement.appendChild(itemsList);
-            menuList.appendChild(dayElement);
+                dayElement.appendChild(itemsList);
+                menuList.appendChild(dayElement);
+            }
         });
     } catch (error) {
         console.error('Error fetching menu:', error);
@@ -99,6 +114,9 @@ async function renderMenu(restaurantId) {
 function filterRestaurants(restaurants, company){
     if(company==='all'){
         renderRestaurants(restaurants);
+        companyAll.classList.add('active');
+        companySodexo.classList.remove('active');
+        companyCompass.classList.remove('active');
     }else{
         const filteredRestaurants = [];
         restaurants.forEach((restaurant) =>{
@@ -107,6 +125,15 @@ function filterRestaurants(restaurants, company){
             }
         })
         renderRestaurants(filteredRestaurants);
+        if(company === 'Sodexo'){
+            companyAll.classList.remove('active');
+            companySodexo.classList.add('active');
+            companyCompass.classList.remove('active');
+        }else if(company === 'Compass Group'){
+            companyAll.classList.remove('active');
+            companySodexo.classList.remove('active');
+            companyCompass.classList.add('active');
+        }
     };
 }
 

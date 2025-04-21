@@ -40,6 +40,7 @@ restaurantSearchButton.addEventListener('click', () => {
     const filteredRestaurants = apiRestaurants.filter(restaurant =>
         restaurant.name.toLowerCase().includes(search)
     );
+    suggestionsContainer.innerHTML = '';
 
     if (filteredRestaurants.length > 0) {
         renderRestaurants(filteredRestaurants);
@@ -58,4 +59,10 @@ companySelectorSodexo.addEventListener('click', () => {
 
 companySelectorCompass.addEventListener('click', () => {
     filterRestaurants(apiRestaurants, 'Compass Group');
+});
+
+document.addEventListener('click', (event) => {
+    if (!suggestionsContainer.contains(event.target) && event.target !== restaurantSearchBar) {
+        suggestionsContainer.innerHTML = '';
+    }
 });
